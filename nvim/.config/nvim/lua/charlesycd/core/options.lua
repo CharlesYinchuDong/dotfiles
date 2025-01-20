@@ -49,3 +49,9 @@ vim.api.nvim_create_autocmd({ "FileChangedShellPost" }, {
   command = 'echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None',
   pattern = { "*" }, 
 })
+
+-- Tabs and spaces.
+opt.tabstop=2
+opt.softtabstop=2
+opt.shiftwidth=2
+opt.expandtab = true

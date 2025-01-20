@@ -12,6 +12,8 @@ keymap.set("n", "<C-j>", ":b#<CR>", {desc = "Previous buffer."})
 
 keymap.set("n", "<leader>cf", ":let @*=expand('%:t')<CR>", {desc = "Copy file name."})
 keymap.set("n", "<leader>ci", ":call setreg('', '#include \"'.expand('%:p:.').'\"', 'l')<CR>", {desc = "Yank include statement."})
+keymap.set("n", "<leader>cp", ":let @*=expand('%:p:.')<CR>", {desc = "Copy file path."})
+keymap.set("n", "<leader>cv", "VaBo0y$%o<Esc>p", {desc = "Copy everything in the curly bracket."})
 
 keymap.set("n", "<leader>o", ":only<CR>", {desc = "Keep only the current window."})
 
