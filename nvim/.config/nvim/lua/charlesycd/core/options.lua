@@ -3,6 +3,7 @@ vim.cmd("let g:netrw_liststyle = 3")
 
 -- For convenience.
 local opt = vim.opt
+local keymap = vim.keymap
 
 -- Display row number on the left side.
 opt.relativenumber = true
@@ -55,3 +56,12 @@ opt.tabstop=2
 opt.softtabstop=2
 opt.shiftwidth=2
 opt.expandtab = true
+
+-- Auto-complete parentheses
+keymap.set("i", "(", "()<Esc>ha")
+keymap.set("i", "{", "{}<Esc>ha")
+keymap.set("i", "[", "[]<Esc>ha")
+keymap.set("i", "\"", "\"\"<Esc>ha")
+keymap.set("i", "`", "``<Esc>ha")
+-- keymap.set("i", "{<CR>", "{<CR>}<Esc>ko<tab>")
+vim.cmd([[inoremap <expr> <CR> search('{\%#}', 'n') ? "\<CR>\<CR>\<Up>\<C-f>" : "\<CR>"]])
